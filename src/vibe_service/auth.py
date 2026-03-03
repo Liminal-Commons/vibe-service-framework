@@ -2,7 +2,7 @@
 
 X-Service-Key header check. Disabled when service_key is empty (dev mode).
 Applied as a FastAPI dependency on REST routes that need protection.
-MCP endpoint at /mcp goes through mcp-hub which handles its own auth.
+MCP endpoint at /mcp goes through vibe-hub which handles its own auth.
 """
 
 from collections.abc import Awaitable, Callable
