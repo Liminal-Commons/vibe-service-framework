@@ -1,4 +1,4 @@
-"""vibe-service-framework — shared framework for chora ecosystem services.
+"""vibe-service-framework — shared framework for vibe ecosystem services.
 
 Every ecosystem service uses EcosystemService as its entry point:
 
