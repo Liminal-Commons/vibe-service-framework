@@ -3,9 +3,9 @@ requires = ["setuptools>=75.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "chora-service-framework"
+name = "vibe-service-framework"
 version = "0.1.0"
-description = "Shared framework for chora ecosystem services. Dual-protocol (REST + MCP), config, auth, logging, health, errors, testing."
+description = "Shared framework for vibe ecosystem services. Dual-protocol (REST + MCP), config, auth, logging, health, errors, testing."
 readme = "README.md"
 requires-python = ">=3.12"
 license = {text = "MIT"}

@@ -6,7 +6,7 @@ from typing import Any
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-from chora_service import BaseServiceConfig, EcosystemService, ServiceError
+from vibe_service import BaseServiceConfig, EcosystemService, ServiceError
 
 
 class SvcConfig(BaseServiceConfig):

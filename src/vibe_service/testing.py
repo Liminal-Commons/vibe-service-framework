@@ -8,8 +8,8 @@ from typing import Any
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-from chora_service.config import BaseServiceConfig
-from chora_service.service import EcosystemService
+from vibe_service.config import BaseServiceConfig
+from vibe_service.service import EcosystemService
 
 
 class TestServiceConfig(BaseServiceConfig):
@@ -46,7 +46,7 @@ def make_test_client(service: EcosystemService) -> AsyncClient:
     """Create an httpx AsyncClient for any EcosystemService.
 
     Usage in a service's test file:
-        from chora_service.testing import make_test_client
+        from vibe_service.testing import make_test_client
         from myservice.server import service
 
         @pytest.fixture

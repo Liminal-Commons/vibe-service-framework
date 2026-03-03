@@ -1,8 +1,8 @@
-"""chora-service-framework — shared framework for chora ecosystem services.
+"""vibe-service-framework — shared framework for chora ecosystem services.
 
 Every ecosystem service uses EcosystemService as its entry point:
 
-    from chora_service import EcosystemService, BaseServiceConfig
+    from vibe_service import EcosystemService, BaseServiceConfig
 
     class Config(BaseServiceConfig):
         model_config = {"env_prefix": "MY_SERVICE_"}
@@ -22,21 +22,21 @@ Every ecosystem service uses EcosystemService as its entry point:
 """
 
 def __getattr__(name: str) -> object:
-    """Lazy imports — allows `from chora_service.mcp import LazyMCPServer`
+    """Lazy imports — allows `from vibe_service.mcp import LazyMCPServer`
     without pulling in fastapi/pydantic-settings (which EcosystemService needs)."""
     if name == "EcosystemService":
-        from chora_service.service import EcosystemService
+        from vibe_service.service import EcosystemService
         return EcosystemService
     if name == "BaseServiceConfig":
-        from chora_service.config import BaseServiceConfig
+        from vibe_service.config import BaseServiceConfig
         return BaseServiceConfig
     if name == "ResilientSessionManager":
-        from chora_service.mcp import ResilientSessionManager
+        from vibe_service.mcp import ResilientSessionManager
         return ResilientSessionManager
     if name == "ServiceError":
-        from chora_service.errors import ServiceError
+        from vibe_service.errors import ServiceError
         return ServiceError
-    raise AttributeError(f"module 'chora_service' has no attribute {name!r}")
+    raise AttributeError(f"module 'vibe_service' has no attribute {name!r}")
 
 __all__ = [
     "EcosystemService",

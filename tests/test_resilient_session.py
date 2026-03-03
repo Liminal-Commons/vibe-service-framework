@@ -8,8 +8,8 @@ import anyio
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-from chora_service import BaseServiceConfig, EcosystemService
-from chora_service.mcp import LazyMCPServer, ResilientSessionManager
+from vibe_service import BaseServiceConfig, EcosystemService
+from vibe_service.mcp import LazyMCPServer, ResilientSessionManager
 
 
 # ── Unit tests: verify branching logic of the override ──
@@ -101,7 +101,7 @@ class TestResilientSessionManagerUnit:
                 new_callable=AsyncMock,
             ) as parent_mock:
                 with patch(
-                    "chora_service.mcp.StreamableHTTPServerTransport",
+                    "vibe_service.mcp.StreamableHTTPServerTransport",
                 ) as mock_transport_cls:
                     mock_transport = MagicMock()
                     mock_transport.mcp_session_id = unknown_id
@@ -156,7 +156,7 @@ class TestResilientSessionManagerUnit:
             mgr._task_group = tg
 
             with patch(
-                "chora_service.mcp.StreamableHTTPServerTransport",
+                "vibe_service.mcp.StreamableHTTPServerTransport",
             ) as mock_transport_cls:
                 mock_transport = MagicMock()
                 mock_transport.mcp_session_id = unknown_id
@@ -194,7 +194,7 @@ class TestResilientSessionManagerUnit:
             mgr._task_group = tg
 
             with patch(
-                "chora_service.mcp.StreamableHTTPServerTransport",
+                "vibe_service.mcp.StreamableHTTPServerTransport",
             ) as mock_transport_cls:
                 mock_transport = MagicMock()
                 mock_transport.mcp_session_id = unknown_id

@@ -450,7 +450,7 @@ class LazyMCPServer:
         from starlette.applications import Starlette
         from starlette.requests import Request
         from starlette.responses import JSONResponse
-        from starlette.routing import Route
+        from starlette.routing import Mount, Route
 
         if self._session_manager is None:
             self._session_manager = ResilientSessionManager(
@@ -481,7 +481,7 @@ class LazyMCPServer:
 
         self._asgi_app = Starlette(
             routes=[
-                Route("/mcp", endpoint=mcp_asgi),
+                Mount("/mcp", app=mcp_asgi),
                 Route("/health", endpoint=health, methods=["GET"]),
             ],
             lifespan=lifespan,

@@ -14,14 +14,14 @@ from typing import Any
 
 from fastapi import FastAPI
 
-from chora_service.auth import make_auth_dependency
-from chora_service.config import BaseServiceConfig
-from chora_service.errors import ServiceError
-from chora_service.errors import error as _error
-from chora_service.errors import ok as _ok
-from chora_service.health import build_health_router
-from chora_service.logging import configure_logging
-from chora_service.mcp import LazyMCPServer, ToolHandler
+from vibe_service.auth import make_auth_dependency
+from vibe_service.config import BaseServiceConfig
+from vibe_service.errors import ServiceError
+from vibe_service.errors import error as _error
+from vibe_service.errors import ok as _ok
+from vibe_service.health import build_health_router
+from vibe_service.logging import configure_logging
+from vibe_service.mcp import LazyMCPServer, ToolHandler
 
 _logger = logging.getLogger(__name__)
 
